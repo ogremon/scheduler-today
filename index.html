@@ -75,10 +75,10 @@
     <div class="my-5 text-center">
       <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin"
         style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0"
-        src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=ogremon-todays-schedule-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=4839955557&linkId=5e0cb30f55f6363d344bc21034e8c34a"></iframe>
+        src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=ogremon-todays-schedule-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=477594181X&linkId=06c7f9ba94c27293e3bc084a967cd7c6"></iframe>
       <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin"
         style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0"
-        src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=ogremon-todays-schedule-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=4295008540&linkId=094928df918ed46697b3ff8fd0a59aea"></iframe>
+        src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=ogremon-todays-schedule-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=4775942611&linkId=7b84b9d392601e6341e95087eca34da8"></iframe>
     </div>
   </div>
 
@@ -230,13 +230,13 @@
             if (events[i].endtime - events[i].starttime > 1) {
               period[j].classList.remove('border-bottom');
             }
-          // イベントの中間のブロックへの処理
+            // イベントの中間のブロックへの処理
           } else if (events[i].starttime < parseInt(period[j].dataset.starttime) && parseInt(period[j].dataset.starttime) < events[i].endtime - 1) {
             period[j].classList.add('selected');
             period[j].classList.add('fixed');
             period[j].classList.add(getColorClass(color_number));
             period[j].classList.remove('border-bottom');
-          // イベントの最後のブロックへの処理
+            // イベントの最後のブロックへの処理
           } else if (parseInt(period[j].dataset.starttime) == events[i].endtime - 1) {
             period[j].classList.add('selected');
             period[j].classList.add('fixed');
