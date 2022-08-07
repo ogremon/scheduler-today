@@ -248,8 +248,11 @@
     }
 
     function reset() {
-      localStorage.removeItem('events');
-      location.reload();
+      var confirm = window.confirm('Are u sure wanna reset?');
+      if (confirm) {
+        localStorage.removeItem('events');
+        location.reload();
+      }
     }
 
     {
