@@ -20,11 +20,14 @@
 
 <body class="bg-info">
   <div class="container my-5 small">
-    <div class="my-5 text-center text-white">
+    <div class="mt-5 text-center text-white">
       <h1 class="text-white">&#x1F31E;Today's Schedule&#x26F1;</h1>
       <div class="fs-5">Drag to make a schedule.</div>
+      <div class="mb-3">
+        <button class="btn btn-link" onclick="reset();">reset</button>
+      </div>
     </div>
-    <div class="row">
+    <div class="mt-3 row">
       <div class="col-2"></div>
       <div class="col-8">
         <div id="scheduler">
@@ -166,6 +169,17 @@
           selected[i].classList.add('d-flex');
           selected[i].classList.add('justify-content-between');
           selected[i].innerHTML = `<div>${time}</div><div class="fw-bold">${title}</div>`;
+
+          // ローカルストレージに内容を保存
+          var events = JSON.parse(localStorage.getItem('events'));
+          if (events === null) events = [];
+          var new_event = {
+            title: title,
+            starttime: selected[i].dataset.starttime,
+            endtime: selected[i].dataset.endtime
+          };
+          events.push(new_event);
+          localStorage.setItem('events', JSON.stringify(events));
         }
         selected[i].classList.add('fixed');
 
@@ -195,6 +209,49 @@
       return colorClassArray[num % colorClassArray.length];
     }
 
+    // 保存したスケジュールを表示
+    function initialize() {
+      var events = JSON.parse(localStorage.getItem('events'));
+      if (events === null) return;
+      var color_number = 0;
+      for (var i = 0; i < events.length; ++i) {
+        var period = document.getElementsByClassName("period");
+        for (var j = 0; j < period.length; ++j) {
+          // イベントの最初のブロックへの処理
+          if (parseInt(period[j].dataset.starttime) == events[i].starttime) {
+            period[j].classList.add('selected');
+            period[j].classList.add('fixed');
+            period[j].classList.add(getColorClass(color_number));
+            var time = period[j].innerHTML;
+            period[j].classList.add('d-flex');
+            period[j].classList.add('justify-content-between');
+            period[j].innerHTML = `<div>${time}</div><div class="fw-bold">${events[i].title}</div>`;
+
+            if (events[i].endtime - events[i].starttime > 1) {
+              period[j].classList.remove('border-bottom');
+            }
+          // イベントの中間のブロックへの処理
+          } else if (events[i].starttime < parseInt(period[j].dataset.starttime) && parseInt(period[j].dataset.starttime) < events[i].endtime - 1) {
+            period[j].classList.add('selected');
+            period[j].classList.add('fixed');
+            period[j].classList.add(getColorClass(color_number));
+            period[j].classList.remove('border-bottom');
+          // イベントの最後のブロックへの処理
+          } else if (parseInt(period[j].dataset.starttime) == events[i].endtime - 1) {
+            period[j].classList.add('selected');
+            period[j].classList.add('fixed');
+            period[j].classList.add(getColorClass(color_number));
+          }
+        }
+        color_number++;
+      }
+    }
+
+    function reset() {
+      localStorage.removeItem('events');
+      location.reload();
+    }
+
     {
       var periods = document.getElementsByClassName("period");
       for (var i = 0; i < periods.length; ++i) {
@@ -203,6 +260,8 @@
         item.addEventListener('touchmove', touchMoveEvent, false);
         item.addEventListener('touchend', touchEndEvent, false);
       }
+
+      initialize();
     }
   </script>
   </div>
