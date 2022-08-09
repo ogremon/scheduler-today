@@ -34,67 +34,69 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5JKXRCN" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-  <div class="container my-5 small">
-    <div class="mt-5 text-center text-white">
-      <h1 class="text-white">&#x1F31E;Today's Schedule&#x26F1;</h1>
-      Drag on the table to make a schedule.
-      <div class="mb-3">
-        <button class="btn btn-link" onclick="reset();">reset</button>
-      </div>
+  <div class="container py-5 small border-bottom" style="height: 100vh;">
+    <div class="text-center bg-dark p-2 mt-5 mx-5" style="color: #3D454D;">
+      <h1>Today's<br>Schedule</h1>
+      Drag on the table 
+      <br>
+      to make a schedule.
     </div>
-    <div class="mt-3 row">
-      <div class="col-2"></div>
-      <div class="col-8">
-        <div id="scheduler">
-          <div class="px-1 border-bottom text-white">AM6</div>
-          <div class="period border-bottom text-white px-1 d-flex align-items-end" style="height: 4vh;"
+    <div class="text-center mb-3">
+      <button class="btn btn-link" onclick="reset();">reset</button>
+    </div>
+    <div class="row">
+      <div class="col-3"></div>
+      <div class="col-6">
+        <div id="scheduler" class="small px-1">
+          <div class="px-1 border-bottom text-white d-flex align-items-end">AM6</div>
+          <div class="period border-bottom text-white px-1 d-flex align-items-end" style="height: 3vh;"
             data-starttime="6">AM7</div>
-          <div class="border-bottom text-white period px-1 d-flex align-items-end" style="height: 4vh;"
+          <div class="border-bottom text-white period px-1 d-flex align-items-end" style="height: 3vh;"
             data-starttime="7">AM8</div>
-          <div class="border-bottom text-white period px-1 d-flex align-items-end" style="height: 4vh;"
+          <div class="border-bottom text-white period px-1 d-flex align-items-end" style="height: 3vh;"
             data-starttime="8">AM9</div>
-          <div class="border-bottom text-white period px-1 d-flex align-items-end" style="height: 4vh;"
+          <div class="border-bottom text-white period px-1 d-flex align-items-end" style="height: 3vh;"
             data-starttime="9">AM10</div>
-          <div class="border-bottom text-white period px-1 d-flex align-items-end" style="height: 4vh;"
+          <div class="border-bottom text-white period px-1 d-flex align-items-end" style="height: 3vh;"
             data-starttime="10">AM11</div>
-          <div class="border-bottom text-white period px-1 d-flex align-items-end" style="height: 4vh;"
+          <div class="border-bottom text-white period px-1 d-flex align-items-end" style="height: 3vh;"
             data-starttime="11">PM12</div>
-          <div class="border-bottom text-white period px-1 d-flex align-items-end" style="height: 4vh;"
+          <div class="border-bottom text-white period px-1 d-flex align-items-end" style="height: 3vh;"
             data-starttime="12">PM13</div>
-          <div class="border-bottom text-white period px-1 d-flex align-items-end" style="height: 4vh;"
+          <div class="border-bottom text-white period px-1 d-flex align-items-end" style="height: 3vh;"
             data-starttime="13">PM14</div>
-          <div class="border-bottom text-white period px-1 d-flex align-items-end" style="height: 4vh;"
+          <div class="border-bottom text-white period px-1 d-flex align-items-end" style="height: 3vh;"
             data-starttime="14">PM15</div>
-          <div class="border-bottom text-white period px-1 d-flex align-items-end" style="height: 4vh;"
+          <div class="border-bottom text-white period px-1 d-flex align-items-end" style="height: 3vh;"
             data-starttime="15">PM16</div>
-          <div class="border-bottom text-white period px-1 d-flex align-items-end" style="height: 4vh;"
+          <div class="border-bottom text-white period px-1 d-flex align-items-end" style="height: 3vh;"
             data-starttime="16">PM17</div>
-          <div class="border-bottom text-white period px-1 d-flex align-items-end" style="height: 4vh;"
+          <div class="border-bottom text-white period px-1 d-flex align-items-end" style="height: 3vh;"
             data-starttime="17">PM18</div>
-          <div class="border-bottom text-white period px-1 d-flex align-items-end" style="height: 4vh;"
+          <div class="border-bottom text-white period px-1 d-flex align-items-end" style="height: 3vh;"
             data-starttime="18">PM19</div>
-          <div class="border-bottom text-white period px-1 d-flex align-items-end" style="height: 4vh;"
+          <div class="border-bottom text-white period px-1 d-flex align-items-end" style="height: 3vh;"
             data-starttime="19">PM20</div>
-          <div class="border-bottom text-white period px-1 d-flex align-items-end" style="height: 4vh;"
+          <div class="border-bottom text-white period px-1 d-flex align-items-end" style="height: 3vh;"
             data-starttime="20">PM21</div>
-          <div class="border-bottom text-white period px-1 d-flex align-items-end" style="height: 4vh;"
+          <div class="border-bottom text-white period px-1 d-flex align-items-end" style="height: 3vh;"
             data-starttime="21">PM22</div>
-          <div class="border-bottom text-white period px-1 d-flex align-items-end" style="height: 4vh;"
+          <div class="border-bottom text-white period px-1 d-flex align-items-end" style="height: 3vh;"
             data-starttime="22">PM23</div>
-          <div class="border-bottom text-white period px-1 d-flex align-items-end" style="height: 4vh;"
+          <div class="border-bottom text-white period px-1 d-flex align-items-end" style="height: 3vh;"
             data-starttime="23">AM0</div>
         </div>
       </div>
-      <div class="col-2"></div>
+      <div class="col-3"></div>
     </div>
-    <div class="my-5 text-center">
-      <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin"
-        style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0"
-        src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=ogremon-todays-schedule-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=477594181X&linkId=06c7f9ba94c27293e3bc084a967cd7c6"></iframe>
-      <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin"
-        style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0"
-        src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=ogremon-todays-schedule-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=4775942611&linkId=7b84b9d392601e6341e95087eca34da8"></iframe>
-    </div>
+  </div>
+  <div class="my-5 text-center">
+    <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin"
+      style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0"
+      src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=ogremon-todays-schedule-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=477594181X&linkId=06c7f9ba94c27293e3bc084a967cd7c6"></iframe>
+    <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin"
+      style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0"
+      src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=ogremon-todays-schedule-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=4775942611&linkId=7b84b9d392601e6341e95087eca34da8"></iframe>
   </div>
 
   <!-- Button trigger modal -->
